@@ -1,0 +1,1 @@
+const KEY='aqw-item-finder-favorites';export const getFavorites=()=>JSON.parse(localStorage.getItem(KEY)||'[]');export const isFavorite=id=>getFavorites().includes(id);export function toggleFavorite(id){const current=getFavorites();const next=current.includes(id)?current.filter(x=>x!==id):[...current,id];localStorage.setItem(KEY,JSON.stringify(next));return next.includes(id)}
